@@ -75,6 +75,7 @@
            ELSE
               PERFORM 0060-CHK-WS-PNTR
            END-IF.
+
        0040-CHK-OTP.
            DISPLAY "EXECUTING 0040-CHK-OTP".
            DIVIDE WS-CHECKSUM BY 10 GIVING WS-Q REMAINDER WS-R.
@@ -83,6 +84,7 @@
            ELSE
               MOVE "FALSE" TO WS-VALID
            END-IF.
+
        0050-CHK-WS-PNTR-CNTR.
            DISPLAY "EXECUTING 0050-CHK-WS-PNTR-CNTR".
            IF WS-PNTR-CNTR = 1
@@ -134,6 +136,7 @@
                  ADD 1 TO WS-PNTR
               END-IF 
            END-IF.
+
        0060-CHK-WS-PNTR.
            DISPLAY "EXECUTING 0060-CHK-WS-PNTR".
            IF WS-PNTR-CNTR = 1
@@ -161,9 +164,7 @@
                  DISPLAY "SUM: " WS-CHECKSUM     *>------------------
                  ADD 1 TO WS-PNTR
               END-IF 
-              
            ELSE
-
               MOVE WS-CARD-DIGITS(WS-PNTR-CNTR:1) TO WS-DIGIT
               DISPLAY "POINTER: " WS-PNTR-CNTR   *>------------------
               COMPUTE WS-PNTR-CNTR = WS-PNTR-CNTR - 1
