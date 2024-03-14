@@ -44,7 +44,7 @@
            MOVE 0 TO WS-CARD-DIGITS.    
            MOVE "VALID" TO WS-VALID.
            MOVE 0 TO WS-PNTR.
-           
+
        0020-RMV-SPC.
            DISPLAY "EXECUTING 0020-RMV-SPC".
            PERFORM VARYING WS-IX FROM 1 BY 1 UNTIL 
